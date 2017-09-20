@@ -196,27 +196,6 @@ li{
 	cursor: pointer;
 	color:rgb(49,194,124);
 }
-.top-side .more-music{
-	position: absolute;
-	width: 200px;
-	height:30px;
-	top:0;
-	bottom: 0;
-	margin:auto;
-	line-height: 30px;
-	left:50%;
-}
-.top-side .more-music a{
-	display: inline-block;
-	margin-right: 20px;
-   color: rgb(155,155,155);
-   font-weight: 600;
-   text-decoration: none;
-}
-.top-side .more-music a:hover{
-	cursor: pointer;
-	color:rgb(49,194,124);
-}
 .top-side .search-input{
 	position: absolute;
 	margin:auto;
