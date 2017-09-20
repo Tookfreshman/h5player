@@ -1,0 +1,309 @@
+*{
+	margin:0;
+	padding: 0;
+}
+body{
+	background-color: #fff;
+	overflow: hidden;
+}
+.music-player{
+	position: absolute;
+	width:100%;
+	height: 14%;
+	bottom:0;
+	border-top:1px solid #ccc;
+}
+.music-player .left-btn{
+	position: absolute;
+	left:0;
+	top:0;
+	width: 25%;
+	height: 100%;
+	background-color:white;
+}
+.music-player .left-btn .switch{
+	position: relative;
+	height:40px;
+	width:240px;
+	margin:30px auto;
+}
+.switch .last-song,.play-pause,.next-song{
+	position: absolute;
+	border-radius: 50%;
+	border: 3px solid rgb(49,194,124);
+	color: rgb(49,194,124);
+	text-align: center;
+	box-sizing: border-box;
+	cursor:pointer
+}
+.left-btn .switch .last-song{
+	left:20px;
+	height: 40px;
+	width: 40px;
+	line-height: 34px;
+	font-size: 20px;
+}
+.left-btn .switch .play-pause{
+	left:100px;
+	height: 40px;
+	width: 40px;
+	line-height: 34px;
+	padding-left: 4px;
+	font-size: 20px;
+}
+.left-btn .switch .next-song{
+	left:180px;
+	height: 40px;
+	width: 40px;
+	line-height: 34px;
+	font-size: 20px;
+}
+.music-player .center-btn{
+	position: absolute;
+	left:25%;
+	top:0;
+	width: 55%;
+	height: 100%;
+	background-color: white;
+}
+.music-player .center-btn .song-poster{
+	position: absolute;
+	top:20px;
+	width:60px;
+	height:60px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	left:30px;
+	background-image: url("../images/poster/Cold Water.jpg");
+	background-size: 60px 60px;
+	cursor: pointer;
+}
+.song-poster .song-poster-ph i{
+	position: absolute;
+	color:rgba(255,255,255,0.8);
+	width:20px;
+	height: 30px;
+	margin:auto;
+	left:0;
+	right: 0;
+	top:0;
+	bottom: 0;
+	font-size: 30px;
+	display: none;
+	transition: 1s all;
+}
+.music-player .center-btn .song-poster .song-poster-ph{
+	position: absolute;
+	width:60px;
+	height:60px;
+	background-color: rgba(0,0,0,0);
+	transition: 1s all;
+}
+.music-player .center-btn .song-poster .song-poster-ph:hover{
+	background-color: rgba(0,0,0,0.3);
+}
+.song-poster .song-poster-ph:hover i{
+	display: block;
+}
+.music-player .center-btn .song-information{
+	position: absolute;
+	width:600px;
+	height:20px;
+	left:120px;
+	top:26px;
+	cursor: pointer;
+}
+.music-player .center-btn .song-information .singer-info{
+	position: absolute;
+	width: 400px;
+	height: 20px;
+	overflow: hidden;
+	user-select:none;
+	color:rgb(153,153,153);
+}
+.singer-info .show-mv{
+	color:rgb(49,194,124);
+	display: inline-block;
+	width: 22px;
+	font-size: 12px;
+	box-sizing: border-box;
+	border: 2px solid rgb(49,194,124);
+	margin-left: 5px;
+	text-align: center;
+	border-radius: 3px;
+}
+.music-player .center-btn .song-information .singer-info .music-name{
+	color:black;
+}
+.music-player .center-btn .song-information .curr-time{
+	position: absolute;
+	left:440px;
+	user-select:none;
+	color:rgb(153,153,153);
+}
+.curr-time::after{
+	content: " / ";
+	position: absolute;
+	left:42px;
+	top:-1px;
+	user-select:none;
+	color:rgb(153,153,153);
+}
+.music-player .center-btn .song-information .total-time{
+	position: absolute;
+	left:490px;
+	user-select:none;
+	color:rgb(153,153,153);
+}
+.music-player .center-btn .total-progress{
+	position: absolute;
+	width: 550px;
+	height: 2px;
+	background-color: #ccc;
+	top:66px;
+	left:120px;
+	border-top:3px solid white;
+	border-bottom:3px solid white;
+}
+.music-player .center-btn .total-progress .curr-progress{
+	position: absolute;
+	width: 0px;
+	height: 2px;
+	background-color: rgb(49,194,124);
+}
+.total-progress .curr-signal{
+	position: absolute;
+	top:-4.5px;
+	left:0px;
+	width:12px;
+	height: 12px;
+	font-size: 10px;
+	color:rgb(49,194,124);
+	display:none; 
+}
+.total-progress:hover .curr-signal{
+	display: block;
+}
+.music-player .right-btn{
+	position: absolute;
+	left:80%;
+	top:0;
+	width: 20%;
+	height: 100%;
+	background-color: white;
+}
+.music-player .right-btn .choice-div{
+	position: absolute;
+	width: 160px;
+	height: 40px;
+	top:32px;
+}
+.music-player .right-btn .choice-div .fav-song{
+	position: absolute;
+	width:40px;
+	height:40px;
+	font-size: 20px;
+	color:#ccc;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+.music-player .right-btn .choice-div .song-volume{
+	position: absolute;
+	left:60px;
+	width:40px;
+	height:40px;
+	font-size: 20px;
+	color:#ccc;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}
+.song-volume .volume-btn{
+	position: absolute;
+	width: 75px;
+	height: 200px;
+	background-color: white;
+	box-shadow: 0 0 3px 1px #ccc;
+	left:-20.5px;
+	bottom:40px;
+	display: none;
+}
+.song-volume .volume-adjust{
+	position: absolute;
+	left:33px;
+	top:20px;
+	width: 4px;
+	height: 100px;
+	background-color: #eee;
+	border-left:3px solid white;
+	border-right:3px solid white;
+}
+.volume-btn:hover{
+	cursor: default;
+}
+.song-volume .volume-adjust:hover .volume-curr-sign{
+	display: block;
+}
+.volume-adjust .volume-curr{
+	position: absolute;
+	bottom: 0;
+	width: 4px;
+	height: 100px;
+	background-color: rgb(49,194,124);
+}
+.volume-adjust .help-choice{
+	position: absolute;
+	bottom: 0;
+	width: 4px;
+	height: 102px;
+	background-color: rgba(49,194,124,0);
+}
+.volume-adjust .volume-curr-sign{
+	position: absolute;
+	top:-1px;
+	left:-4px;
+	width:12px;
+	height: 12px;
+	font-size: 10px;
+	color:rgb(49,194,124);
+	display:none; 
+}
+.song-volume .volume-text{
+	position: absolute;
+	text-align: center;
+	width:40px;
+	margin: auto;
+	left: 0;
+	right: 0;
+	top:120px;
+	font-size: 15px;
+	color:black;
+}
+.song-volume .volume-sign{
+	position: absolute;
+	width: 75px;
+	height: 40px;
+	border-top: 1px solid #eee;
+	box-sizing:border-box;
+	bottom: 0;
+	left:0;
+	text-align: center;
+	font-size: 22px;
+	padding-top:8px;
+	color:rgb(204,204,204);
+}
+.volume-sign:hover{
+	cursor: pointer;
+}
+.music-player .right-btn .choice-div .song-download{
+	position: absolute;
+	left:120px;
+	width:40px;
+	height:40px;
+	font-size: 20px;
+	color:#ccc;
+	text-align: center;
+	line-height: 40px;
+	cursor: pointer;
+}

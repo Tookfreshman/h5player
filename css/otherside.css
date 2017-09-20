@@ -1,0 +1,379 @@
+li{
+	list-style: none;
+}
+.music-list{
+	position: absolute;
+	top:50px;
+	right:0;
+	width: 80%;
+	height: 550px;
+	overflow: hidden;
+}
+.music-list ul{
+	width: 100%;
+	height: 100%;
+}
+.music-list ul li{
+	list-style: none;
+	height: 40px;
+	width: 100%;
+	border-top: 1px solid #eee;
+	line-height: 40px;
+}
+.music-list ul li a{
+	text-decoration: none;
+	color:black;
+}
+.music-list ul li span{
+	position: absolute;
+	left:40%;
+	display: none;
+}
+.music-list ul li span i{
+	width: 30px;
+	height: 40px;
+	line-height: 40px;
+	color: rgb(187,187,187);
+	font-size:20px;
+	margin-right: 15px;
+}
+.music-list ul li span i:hover{
+	cursor: pointer;
+}
+.music-list ul li .musicName{
+	position: absolute;
+	width:60%;
+	padding-left: 5%;
+}
+.music-list ul li .singer{
+	position: absolute;
+	right:0;
+	width:40%;
+}
+.music-list ul li:hover{
+	background-color: rgb(242,242,242);
+}
+.music-list ul li:hover span{
+	display: block;
+}
+.left-side{
+	position: absolute;
+	width:20%;
+	float: left;
+	top:0;
+	background-color: rgb(237,245,246);
+	height: 86%;
+}
+.left-side .portrait{
+	position: absolute;
+	margin:auto;
+	top:10%;
+	left: 0;
+	right:0;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	background-image: url("../images/1.jpg");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: 60px 60px;
+}
+.left-side .online-music{
+	position: absolute;
+	top:30%;
+	margin:auto;
+	left:0;
+	right:0;
+	width:70%;
+	height:25%;
+	user-select:none;
+}
+.left-side .online-music p{
+	margin-left:20px;
+	color:rgb(153,153,153);
+	height: 16px;
+	font-size: 12px;
+	user-select:none;
+}
+.online-music p:hover{
+	cursor: pointer;
+}
+.left-side .online-music ul{
+	position: absolute;
+	top:24px;
+	width:100%;
+	height: 100%;
+}
+.left-side .online-music ul li{
+	font-size: 15px;
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 5px;
+	border-radius:5px;
+}
+.left-side .my-music{
+	position: absolute;
+	top:55%;
+	margin:auto;
+	left:0;
+	right:0;
+	height:40%;
+	width: 70%;
+	user-select:none;
+}
+.left-side .my-music p{
+	margin-left:20px;
+	color:rgb(153,153,153);
+	height:16px;
+	font-size: 12px;
+	user-select:none;
+}
+.left-side .my-music p:hover{
+	cursor: pointer;
+}
+.left-side .my-music ul{
+	position: absolute;
+	top: 24px;
+	width:100%;
+	height: 100%;
+}
+.left-side .my-music ul li{
+	font-size: 15px;
+	width: 100%;
+	height: 34px;
+	line-height: 34px;
+	margin-bottom: 5px;
+	border-radius:5px;
+}
+.left-side ul li:hover{
+	background-color: rgb(229,237,238);
+	cursor: pointer;
+}
+.left-side ul li span{
+	width:20px;
+	height: 20px;
+	font-size: 18px;
+	margin-right:10px;
+	margin-left: 6px;
+	color:rgb(113,116,116);
+}
+.left-side ul li span.fa-heart-o{
+	color:rgb(255,106,106);
+}
+.top-side{
+	position:absolute;
+	top:0;
+	right: 0;
+	width: 80%;
+	background-color: white;
+	height: 45px;
+	border-bottom: 5px solid #ccc;
+}
+.top-side .back-forward{
+	position: absolute;
+	margin:auto;
+	left:60px;
+	top:0;
+	bottom: 0;
+	width:120px;
+	height: 30px;
+	font-size: 22px;
+	color:rgb(200,200,200);
+}
+.top-side .back-forward span{
+	display: inline-block;
+	width:20px;
+	height: 30px;
+}
+.top-side .back-forward span:nth-child(1){
+	color:rgb(151,151,151);
+}
+.top-side .back-forward span:nth-child(3){
+	font-size: 18px;
+}
+.top-side .back-forward span:hover{
+	cursor: pointer;
+	color:rgb(49,194,124);
+}
+.top-side .more-music{
+	position: absolute;
+	width: 200px;
+	height:30px;
+	top:0;
+	bottom: 0;
+	margin:auto;
+	line-height: 30px;
+	left:50%;
+}
+.top-side .more-music a{
+	display: inline-block;
+	margin-right: 20px;
+   color: rgb(155,155,155);
+   font-weight: 600;
+   text-decoration: none;
+}
+.top-side .more-music a:hover{
+	cursor: pointer;
+	color:rgb(49,194,124);
+}
+.top-side .search-input{
+	position: absolute;
+	margin:auto;
+	top:0;
+	bottom:0;
+	left:20%;
+	width: 200px;
+	height: 25px;
+}
+.top-side .search-input input{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	border:none;
+	outline: none;
+	-webkit-appearance: none;
+	border-radius: 10px;
+	background-color: rgb(238,238,238);
+	text-indent: 5px;
+}
+.top-side .search-input span{
+	position: absolute;
+	top:5px;
+	left:70px;
+	font-size:13px;
+	color: rgb(187,187,187);
+	user-select:none;
+}
+.top-side .search-input i{
+	position: absolute;
+	right:8px;
+	width:25px;
+	height: 25px;
+	line-height: 25px;
+	font-size: 15px;
+	color: rgb(187,187,187);
+}
+.top-side .search-input i:hover{
+	cursor: pointer;
+}
+.top-side .close-search{
+	position: absolute;
+	margin:auto;
+	right:-60px;
+	top:0;
+	bottom: 0;
+	width:300px;
+	height: 30px;
+	color:rgb(200,200,200);
+	line-height: 30px;
+}
+.top-side .close-search span{
+	display: inline-block;
+	padding-right: 5px;
+}
+.top-side .close-search span:hover{
+	cursor: pointer;
+	color:rgb(49,194,124);
+}
+.active{
+	background-color: rgb(49,194,124);
+}
+.music-lrc{
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	height:86%;
+	background-color: rgba(16,16,11,0.95); 
+}
+.music-lrc .music-lrc-bg{
+	position: absolute;
+	width:80%;
+	height: 80%;
+	margin:auto;
+	left:0;
+	right: 0;
+	bottom: 0;
+	background-color: white;
+	background-image:url("../images/poster/Cold Water.jpg");
+	background-position: top center;
+	z-index: -1;
+}
+.music-lrc .lrc-poster{
+	position: absolute;
+	margin:auto;
+	top:10%;
+	left:15%;
+	width: 280px;
+	height: 280px;
+	background-image:url("../images/poster/Cold Water.jpg");
+	background-size: 280px 280px;
+}
+.music-lrc .some-btn{
+	position: absolute;
+	width: 200px;
+	height: 40px;
+	top:64%;
+	left:18%;
+}
+.music-lrc .some-btn span{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 25px;
+	color:rgb(122,122,122);
+	margin-left:20px;
+	padding-top: 10px;
+}
+.music-lrc .some-btn span:hover{
+	color:white;
+	cursor: pointer;
+}
+.music-lrc .lrc-side{
+	position: absolute;
+	right:0;
+	height: 100%;
+	width: 60%;
+	color: white;
+	user-select:none;
+}
+.lrc-side .lrc-name{
+	position: absolute;
+	height: 30px;
+	width: 70%;
+	top:10%;
+	left:5%;
+	font-size: 25px;
+}
+.lrc-side .lrc-info{
+	position: absolute;
+	width: 70%;
+	height: 40px;
+	top:18%;
+	left:5%;
+	line-height:40px;
+}
+.lrc-side .show-lrc{
+	position: absolute;
+	top:30%;
+	left:5%;
+	width: 70%;
+	height: 280px;
+	overflow: hidden;
+}
+.lrc-side .show-lrc ul{
+	position: absolute;
+	top:120px;
+	width:100%;
+	height: 100%;
+}
+.lrc-side .show-lrc ul li{
+	height:40px;
+	width: 100%;
+	line-height: 40px;
+}
+.music-list2{
+	top:100%;
+}
