@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<title>Document</title>
+	<link rel="stylesheet" href="css/musicPlayer.css" />
+	<link rel="stylesheet" href="css/otherside.css" />
+	<link rel="stylesheet" href="css/mvPlayer.css" />
+	<!-- 导入外部图标字体库 -->
+	<link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css"/>
+	<script type="text/javascript" src="js/template-native.js"></script>
+	<script type="text/javascript" src="js/jquery-3.1.1.js"></script>
+</head>
+<body>
+	<audio src="music/Justin Bieber - cold water.mp3" class="audio-player"></audio>
+	<!-- 左道航 -->
+	<div class="left-side">
+		<div title="头像" class="portrait"></div>
+		<div class="online-music">
+			<p>在线音乐</p>
+			<ul>
+				<li title="音乐馆"><span class="fa fa-music"></span><a>音乐馆</a></li>
+				<li title="MV"><span class="fa fa-youtube-play"></span><a>MV</a></li>
+			</ul>
+		</div>
+		<div class="my-music">
+			<p>我的音乐</p>
+			<ul>
+				<li class="my-music-fav" title="我喜欢"><span class="fa fa-heart-o"></span><a>我喜欢</a></li>
+				<li class="local-list" title="本地和下载"><span class="fa fa-television"></span><a>本地和下载</a></li>
+				<li title="播放历史"><span class="fa fa-clock-o"></span><a>播放历史</a></li>
+				<li title="试听列表"><span class="fa fa-list-ul"></span><a>试听列表</a></li>
+			</ul>
+		</div>
+	</div>
+	<!-- 搜索列表 -->
+	<div class="top-side">
+		<div class="back-forward">
+			<span class="fa fa-angle-left"></span>
+			<span class="fa fa-angle-right"></span>
+			<span class="fa fa-refresh"></span>
+		</div>
+		<div class="search-input">
+			<input type="text" />
+			<span class="text-ph">点击搜索</span>
+			<i class="fa fa-search"></i>
+		</div>
+		<div class="more-music">
+			<a href="排行榜.html" title="排行榜">排行榜</a>
+			<a href="精选.html" title="精选">精选</a>
+			<a href="专辑.html"title="专辑">专辑</a>
+		</div>
+		<div class="close-search">
+			<span title="反馈" class="fa">反馈</span>
+			<span title="我的VIP" class="fa">VIP</span>
+			<span title="主菜单" class="fa fa-list-ul"></span>
+			<span title="精简模式(Ctrl+Alt+C)" class="fa fa-compress"></span>
+			<span title="最小化" class="fa fa-window-minimize"></span>
+			<span title="还原" class="fa fa-window-restore"></span>
+			<span title="关闭" class="fa fa-close"></span>
+		</div>
+	</div>
+	<!-- 播放列表 -->
+	<div class="music-list music-list1">
+		<ul>
+			<li><a class="musicName">歌曲</a><a class="singer">歌手</a></li>
+			<li><a class="musicName">Cold Water</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">Justin Bieber/Cody Simpson</a></li>
+			<li><a class="musicName">Eenie Meenie</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">Justin Bieber/Sean Kingston</a></li>
+			<li><a class="musicName">I'll Show You</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">Justin Bieber</a></li>
+			<li><a class="musicName">What Do You Mean</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">Justin Bieber</a></li>
+		</ul>
+	</div>
+	<!-- 我喜欢界面 -->
+	<div class="music-list music-list2">
+		<ul>
+			<li><a class="musicName">歌曲</a><a class="singer">歌手</a></li>
+			<li><a class="musicName">消愁live</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">毛不易</a></li>
+			<li><a class="musicName">给未来的自己live</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">杨宗纬</a></li>
+			<li><a class="musicName">无条件</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">陈奕迅</a></li>
+			<li><a class="musicName">你在终点等我</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">王菲</a></li>
+			<li><a class="musicName">Sorry</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">Justin Bieber</a></li>
+			<li><a class="musicName">安妮</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">王杰</a></li>
+			<li><a class="musicName">天空之城</a><span><i class="fa fa-play-circle-o"></i><i class="fa fa-share-alt"></i><i class="fa fa-cloud-download"></i></span><a class="singer">李志</a></li>
+		</ul>
+	</div>
+	<!-- 歌词界面 -->
+	<div class="music-lrc">
+		<div class="music-lrc-bg"></div>
+		<div class="lrc-poster"></div>
+		<div class="some-btn">
+			<span title="评论" class="fa fa-commenting"></span>
+			<span title="分享" class="fa fa-share-square-o"></span>
+			<span title="明星壁纸" class="fa fa-user-circle"></span>
+		</div>
+		<div class="lrc-side">
+			<p class="lrc-name">Cold Water</p>
+			<div class="lrc-info">歌手:Justin Bieber/Cody Simpson</div>
+			<div class="show-lrc">
+				<ul class="show-lrc-ul"></ul>
+			</div>
+		</div>
+	</div>
+	<!-- MV界面 -->
+	<div class="music-mv">
+		<div class="mv-player">
+			<video src="video/Cold Water.mp4"></video>
+			<div class="mv-switch">
+				<div class="mv-play  fa fa-play"></div>
+				<div class="mv-total-progress">
+					<div class="mv-curr-progress"></div>
+				</div>
+				<div class="mv-time">
+					<span class="mv-curr-time">00:00:00</span>
+					<span>/</span>
+					<span class="mv-total-time">00:00:00</span>
+				</div>
+				<div class="mv-full-screen fa fa-expand"></div>
+			</div>
+			<div class="mv-close fa fa-close"></div>
+		</div>
+	</div>
+	<!-- 自定义MP3播放器 -->
+	<div class="music-player">
+		<div class="left-btn">
+			<div class="switch">
+				<div  title="上一首" class="last-song fa fa-step-backward"></div>
+				<div  title="播放" class="play-pause fa fa-play"></div>
+				<div  title="下一首" class="next-song fa fa-step-forward"></div>
+			</div>
+		</div>
+		<div class="center-btn">
+			<div title="展开歌曲详情页" class="song-poster">
+				<div class="song-poster-ph">
+					<i class="fa fa-angle-double-up"></i>
+				</div>
+			</div>
+			<div class="song-information">
+				<p class="singer-info"><span class="music-name">Cold Water</span><span> - </span><span class="music-singer">Justin Bieber / Cody Simpson</span><span class="show-mv">MV</span></p>
+				<p class="curr-time">00:00</p>
+				<p class="total-time">00:00</p>
+			</div>
+			<div class="total-progress">
+				<div class="curr-progress"></div>
+				<div class="curr-signal fa fa-circle"></div>
+			</div>
+		</div>
+		<div class="right-btn">
+			<div class="choice-div">
+				<div title="我喜欢" class="fav-song fa fa-heart-o"></div>
+				<div title="音量" class="song-volume fa fa-volume-up">
+					<div class="volume-btn">
+						<div class="volume-adjust">
+							<div class="volume-curr"></div>
+							<div class="volume-curr-sign fa fa-circle"></div>
+							<div class="help-choice"></div>
+						</div>
+						<p class="volume-text">100%</p>
+						<div class="volume-sign fa fa-volume-up"></div>
+					</div>
+				</div>
+				<div title="已下载过的歌曲" class="song-download fa fa-cloud-download"></div>
+			</div>
+		</div>
+	</div>
+
+	<script type="text/template" id='template'>   
+		 <% for(var i = 0;i<lrc.length;i++){%>
+	 			<li data-time=<%=time[i]%>><%=lrc[i]%></li>
+	        <%}%>
+	</script>
+	<script src="js/info.js"></script>
+	<script src="js/mp3-player.js"></script>
+	<script src="js/mv-player.js"></script>
+</body>
+</html>
