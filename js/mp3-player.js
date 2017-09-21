@@ -28,14 +28,6 @@ var show_lrc_ul = document.querySelector(".show-lrc-ul");
 var lrc_poster = document.querySelector(".lrc-poster");
 var lrc_name = document.querySelector(".lrc-name");
 var music_lrc_bg = document.querySelector(".music-lrc-bg");
-var video = document.querySelector("video");
-var mvPlay = document.querySelector(".mv-play");
-var currtime = document.querySelector(".mv-curr-time");
-var totaltime = document.querySelector(".mv-total-time");
-var fullScreen = document.querySelector(".mv-full-screen");
-var totalProgress = document.querySelector(".mv-total-progress");
-var currProgress = document.querySelector(".mv-curr-progress");
-var mvFulltime = 0;
 function Isplay(){
 	if(audio_player.paused){
 		audio_player.play();
@@ -51,56 +43,7 @@ function Isplay(){
 		play_pause.title = "播放";
 	}
 }
-play_pause.onclick = function(){
-	Isplay();
-};
 var curr_index = 0;
-next_song.onclick = function(e){
-	curr_index++;
-	if(curr_index > song.length - 1){
-		curr_index = 0;
-	}
-	audio_player.src = song[curr_index].src;
-	music_name.innerHTML = song[curr_index].name;
-	music_singer.innerHTML = song[curr_index].singer;
-	song_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-	lrc_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-	music_lrc_bg.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-	lrc_name.innerHTML = song[curr_index].name;
-	video.src = song[curr_index].mv_src;
-	$(".lrc-info").html("歌手:" + song[curr_index].singer);
-	data = {
-		time:ttArr[curr_index],
-		lrc:ssArr[curr_index]
-	};
-	str = template('template',data);
-	document.querySelector(".show-lrc-ul").innerHTML= str;
-	Isplay();
-	e.stopPropagation();
-};
-last_song.onclick = function(e){
-	curr_index--;
-	if(curr_index < 0){
-		curr_index = 3;
-	}
-	audio_player.src = song[curr_index].src;
-	music_name.innerHTML = song[curr_index].name;
-	music_singer.innerHTML = song[curr_index].singer;
-	lrc_name.innerHTML = song[curr_index].name;
-	song_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-	lrc_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-	music_lrc_bg.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-	video.src = song[curr_index].mv_src;
-	$(".lrc-info").html("歌手:" + song[curr_index].singer);
-	data = {
-		time:ttArr[curr_index],
-		lrc:ssArr[curr_index]
-	};
-	str = template('template',data);
-	document.querySelector(".show-lrc-ul").innerHTML= str;
-	Isplay();
-	e.stopPropagation();
-};
 // 定义音频总时长
 var full_time = 0;
 //当音频可以播放时
@@ -112,6 +55,62 @@ audio_player.oncanplay = function(){
 	m = m<10?"0" + m :	m;
 	s = s<10?"0" + s :	s;
 	total_time.innerHTML = m + ":" + s ;
+	play_pause.onclick = function(){
+		Isplay();
+	};
+	next_song.onclick = function(e){
+		curr_index++;
+		if(curr_index > song.length - 1){
+			curr_index = 0;
+		}
+		audio_player.src = song[curr_index].src;
+		music_name.innerHTML = song[curr_index].name;
+		music_singer.innerHTML = song[curr_index].singer;
+		song_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
+		lrc_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
+		music_lrc_bg.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
+		lrc_name.innerHTML = song[curr_index].name;
+		$(".lrc-info").html("歌手:" + song[curr_index].singer);
+		data = {
+			time:ttArr[curr_index],
+			lrc:ssArr[curr_index]
+		};
+		str = template('template',data);
+		document.querySelector(".show-lrc-ul").innerHTML= str;
+		Isplay();
+		e.stopPropagation();
+	};
+	last_song.onclick = function(e){
+		curr_index--;
+		if(curr_index < 0){
+			curr_index = 3;
+		}
+		audio_player.src = song[curr_index].src;
+		music_name.innerHTML = song[curr_index].name;
+		music_singer.innerHTML = song[curr_index].singer;
+		lrc_name.innerHTML = song[curr_index].name;
+		song_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
+		lrc_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
+		music_lrc_bg.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
+		$(".lrc-info").html("歌手:" + song[curr_index].singer);
+		data = {
+			time:ttArr[curr_index],
+			lrc:ssArr[curr_index]
+		};
+		str = template('template',data);
+		document.querySelector(".show-lrc-ul").innerHTML= str;
+		Isplay();
+		e.stopPropagation();
+	};
+	total_progress.onmousedown = function(e){
+			if(e.offsetX >=540){
+				curr_signal.style.left = "540px";
+			}else{
+				curr_signal.style.left = e.offsetX + "px";
+			}
+			curr_progress.style.width = e.offsetX + "px";
+			audio_player.currentTime = e.offsetX / 550 * full_time;	
+	};
 };
 audio_player.ontimeupdate = function(){
 	var cTime = audio_player.currentTime;
@@ -147,7 +146,7 @@ audio_player.ontimeupdate = function(){
 		song_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
 		lrc_poster.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
 		music_lrc_bg.style.backgroundImage = 'url("images/poster/' + song[curr_index].name +'.jpg")';
-		video.src = song[curr_index].mv_src;
+
 		$(".lrc-info").html("歌手:" + song[curr_index].singer);
 		data = {
 			time:ttArr[curr_index],
@@ -157,15 +156,6 @@ audio_player.ontimeupdate = function(){
 		document.querySelector(".show-lrc-ul").innerHTML= str;
 		Isplay();
 	}
-};
-total_progress.onmousedown = function(e){
-		if(e.offsetX >=540){
-			curr_signal.style.left = "540px";
-		}else{
-			curr_signal.style.left = e.offsetX + "px";
-		}
-		curr_progress.style.width = e.offsetX + "px";
-		audio_player.currentTime = e.offsetX / 550 * full_time;	
 };
 fav_song.onclick = function(){
 	if(fav_song.classList.contains("fa-heart-o")){
