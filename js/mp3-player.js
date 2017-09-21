@@ -47,7 +47,7 @@ var curr_index = 0;
 // 定义音频总时长
 var full_time = 0;
 //当音频可以播放时
-audio_player.oncanplay = function(){
+audio_player.oncanplaythrough = function(){
 	full_time = audio_player.duration;
 	var m  = Math.floor(full_time%3600/60);
 	var s = Math.floor(full_time%60);
